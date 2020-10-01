@@ -21,8 +21,13 @@
 
         socket.emit('mensaje', {nombre: 'Carlos'});
 
-        socket.on('mensaje', function(payload){
+        socket.on('nuevo-mensaje', function(payload){
             console.log('Escuchando:', payload);
+        });
+        
+        socket.on('active-djs', function(djs){
+            console.clear();
+            console.table(djs);
         });
 
     </script>
